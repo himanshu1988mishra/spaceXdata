@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 
 function Sidebar(props) {
-
   const years = ['2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020']
   const [btnValues] = useState(years)
-
+  
   return (
     <React.Fragment>
       <h3>Filters</h3>
@@ -13,7 +12,7 @@ function Sidebar(props) {
         <div className="filter-btns">
           {
             btnValues.map(year => (
-                <button key={year} value={year} onClick={props.filter}>
+                <button key={year} value={year} onClick={props.handleYearClick}>
                   {year}
                 </button>
               )
@@ -23,8 +22,8 @@ function Sidebar(props) {
         
         <p>Successful Launch</p>
         <div className="filter-btns">
-          <button value="True">True</button>
-          <button value="False">False</button>
+          <button onClick={props.handleLaunchClick} value="true">true</button>
+          <button onClick={props.handleLaunchClick} value="false">false</button>
         </div>
         
         <p>Successful Landing</p>

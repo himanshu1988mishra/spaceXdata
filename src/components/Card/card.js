@@ -1,7 +1,6 @@
 import React from 'react'
 
 function Card({flights}) {
-
   return (
     <React.Fragment>
       {
@@ -15,17 +14,17 @@ function Card({flights}) {
                   <strong>Mission Ids:</strong>
                 </p>
                 <ul>
-                {flight.mission_id.map(id => <li key={flight.launch_date_local}>{id}</li>)}
+                {flight.mission_id.map((id, index) => <li key={index}>{id}</li>)}
                 </ul>
                 
                 <p>
                   <strong>Launch Year: </strong> {flight.launch_year}
                 </p>
                 <p>
-                  <strong>Successful Launch: </strong> {flight.launch_success}
+                  <strong>Successful Launch: </strong> {`${flight.launch_success}`}
                 </p>
                 <p>
-                  <strong>Successful Landing: </strong> {flight.rocket.first_stage.cores[0].land_success}
+                  <strong>Successful Landing: </strong> {`${flight.rocket.first_stage.cores[0].land_success}`}
                 </p>
               </div>
             </article>
